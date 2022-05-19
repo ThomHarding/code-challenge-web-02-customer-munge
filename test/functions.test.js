@@ -1,5 +1,7 @@
 // IMPORT MODULES under test here:
 import { 
+    addAllAges,
+    getAverageCoolFactor,
     greetUsers,
     greetUsersOverAge60,
 } from '../functions.js';
@@ -40,10 +42,10 @@ test('greetUsersOverAge60', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-skip('addAllAges', (expect) => {
-    const expected = true;
+test('addAllAges', (expect) => {
+    const expected = 2048;
 
-    const actual = true;
+    const actual = addAllAges(customers)[0];
 
     expect.equal(actual, expected);
 });
@@ -51,6 +53,7 @@ skip('addAllAges', (expect) => {
 
 skip('getAverageCoolFactor', (expect) => {
     const expected = true;
+    console.log(getAverageCoolFactor(customers));
 
     const actual = true;
 
