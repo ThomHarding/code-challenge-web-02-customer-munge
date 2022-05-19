@@ -51,7 +51,7 @@ test('addAllAges', (expect) => {
 });
 
 
-skip('getAverageCoolFactor', (expect) => {
+test('getAverageCoolFactor', (expect) => {
     const expected = true;
     console.log(getAverageCoolFactor(customers));
 
