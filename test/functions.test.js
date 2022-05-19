@@ -1,6 +1,7 @@
 // IMPORT MODULES under test here:
 import { 
     addAllAges,
+    getAllCoolFactorsOfEachCar,
     getAverageCoolFactor,
     getGenderBreakdownOfEachCar,
     getGenderBreakdownOfFordOwners,
@@ -78,8 +79,9 @@ skip('getGenderBreakdownOfFordOwners', (expect) => {
     expect.equal(actual, expected);
 });
 
-test('getGenderBreakdownOfEachCar', (expect) => {
+skip('getGenderBreakdownOfEachCar', (expect) => {
     const expected = true;
+
     const actual = getGenderBreakdownOfEachCar(customers);
 
     expect.equal(actual, expected);
@@ -87,8 +89,8 @@ test('getGenderBreakdownOfEachCar', (expect) => {
 
 skip('getAllCoolFactorsOfEachCar', (expect) => {
     const expected = true;
-
-    const actual = true;
+    
+    const actual = getAllCoolFactorsOfEachCar(customers);
 
     expect.equal(actual, expected);
 });

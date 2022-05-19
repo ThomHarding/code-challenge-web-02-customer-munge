@@ -123,20 +123,16 @@ Output:
 
 export function getGenderBreakdownOfEachCar(customers) {
     return customers.reduce((acc, customer) => {
-        // check to see if my hashMap already has a value with this key
         if(acc[customer.car_make]) {
-        // if it does, increment
             if(acc[customer.car_make][customer.gender]) {
                 acc[customer.car_make][customer.gender]++;
             } else {
                 acc[customer.car_make][customer.gender] = 1;
             }
         } else {
-        // if it does NOT initialize
             acc[customer.car_make] = [];
             acc[customer.car_make][customer.gender] = 1;
         }
-
         return acc;
     }, {});
 }
@@ -153,7 +149,15 @@ Output:
 
 
 export function getAllCoolFactorsOfEachCar(customers) {
-    return true;
+    return customers.reduce((acc, customer) => {
+        if(acc[customer.car_make]) {
+            acc[customer.car_make].push(customer.cool_factor);
+        } else {
+            acc[customer.car_make] = [];
+            acc[customer.car_make].push(customer.cool_factor);
+        }
+        return acc;
+    }, {});
 }
 
 /////////////////////////////// STRETCH GOALS ///////////////////////////////////////
