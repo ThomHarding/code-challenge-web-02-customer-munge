@@ -1,5 +1,11 @@
 // IMPORT MODULES under test here:
 import { 
+    addAllAges,
+    getAllCoolFactorsOfEachCar,
+    getAverageCoolFactor,
+    getGenderBreakdownOfEachCar,
+    getGenderBreakdownOfFordOwners,
+    getTotalOfEachGender,
     greetUsers,
     greetUsersOverAge60,
 } from '../functions.js';
@@ -10,13 +16,13 @@ const { test, skip } = QUnit;
 skip('greetUsers', (expect) => {
     const expected = true;
 
-    const actual = greetUsers();
+    const actual = greetUsers(customers);
 
     expect.equal(actual, expected);
 });
 
 
-test('greetUsersOverAge60', (expect) => {
+skip('greetUsersOverAge60', (expect) => {
     const expected = [
         'Hello Suzi Summerson!',
         'Hello Boot Penton!',
@@ -41,18 +47,18 @@ test('greetUsersOverAge60', (expect) => {
 });
 
 skip('addAllAges', (expect) => {
-    const expected = true;
+    const expected = 2048;
 
-    const actual = true;
+    const actual = addAllAges(customers)[0];
 
     expect.equal(actual, expected);
 });
 
 
 skip('getAverageCoolFactor', (expect) => {
-    const expected = true;
+    const expected = 5;
 
-    const actual = true;
+    const actual = getAverageCoolFactor(customers);
 
     expect.equal(actual, expected);
 });
@@ -60,7 +66,7 @@ skip('getAverageCoolFactor', (expect) => {
 skip('getTotalOfEachGender', (expect) => {
     const expected = true;
 
-    const actual = true;
+    const actual = getTotalOfEachGender(customers);
 
     expect.equal(actual, expected);
 });
@@ -68,7 +74,7 @@ skip('getTotalOfEachGender', (expect) => {
 skip('getGenderBreakdownOfFordOwners', (expect) => {
     const expected = true;
 
-    const actual = true;
+    const actual = getGenderBreakdownOfFordOwners(customers);
 
     expect.equal(actual, expected);
 });
@@ -76,15 +82,15 @@ skip('getGenderBreakdownOfFordOwners', (expect) => {
 skip('getGenderBreakdownOfEachCar', (expect) => {
     const expected = true;
 
-    const actual = true;
+    const actual = getGenderBreakdownOfEachCar(customers);
 
     expect.equal(actual, expected);
 });
 
 skip('getAllCoolFactorsOfEachCar', (expect) => {
     const expected = true;
-
-    const actual = true;
+    
+    const actual = getAllCoolFactorsOfEachCar(customers);
 
     expect.equal(actual, expected);
 });
