@@ -2,8 +2,9 @@
 Output: 
 ['Hello Suzie Summerson!', 'Hello Cacilia Caramuscia', 'Hello Mattie Mungane' etc]
 */
-
 export function greetUsers(customers) {
+    
+    console.log(customers);
      // just map over them to make a greeting
     const greeting = customers.map(customer => 'Hello ' + customer.first_name + ' ' + customer.last_name + '!');
     return greeting;
@@ -15,6 +16,8 @@ Output:
 */
 
 export function greetUsersOverAge60(customers) {
+    
+    console.log(customers);
     const over60 = customers.filter(customer => customer.age > 60);
     return greetUsers(over60);
         // first, filter over the user to get the ones over 60
@@ -36,7 +39,7 @@ export function addAllAges(customers) {
                 acc[0] = customer.age;
             }
             return acc;
-        });
+        }, {});
     // reduce through the customers to make a sum
 }
 
@@ -55,7 +58,7 @@ export function getAverageCoolFactor(customers) {
             acc = customer;
         }
         return acc;
-    });
+    }, {});
     // then reduce through that array to get a sum
     return Math.floor(coolSum / customers.length);
     // then divide by the total number of customers
@@ -72,7 +75,15 @@ Output:
 */
 
 export function getTotalOfEachGender(customers) {
-    return true;
+    return customers
+        .reduce((acc, customer) => {
+            if(acc[customer.gender]) {
+                acc[customer.gender]++;
+            } else {
+                acc[customer.gender] = 1;
+            }
+            return acc;
+        }, {});
 }
 
 /* 

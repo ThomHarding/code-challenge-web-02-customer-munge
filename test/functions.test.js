@@ -2,6 +2,7 @@
 import { 
     addAllAges,
     getAverageCoolFactor,
+    getTotalOfEachGender,
     greetUsers,
     greetUsersOverAge60,
 } from '../functions.js';
@@ -12,13 +13,13 @@ const { test, skip } = QUnit;
 skip('greetUsers', (expect) => {
     const expected = true;
 
-    const actual = greetUsers();
+    const actual = greetUsers(customers);
 
     expect.equal(actual, expected);
 });
 
 
-test('greetUsersOverAge60', (expect) => {
+skip('greetUsersOverAge60', (expect) => {
     const expected = [
         'Hello Suzi Summerson!',
         'Hello Boot Penton!',
@@ -42,7 +43,7 @@ test('greetUsersOverAge60', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-test('addAllAges', (expect) => {
+skip('addAllAges', (expect) => {
     const expected = 2048;
 
     const actual = addAllAges(customers)[0];
@@ -51,11 +52,10 @@ test('addAllAges', (expect) => {
 });
 
 
-test('getAverageCoolFactor', (expect) => {
-    const expected = true;
-    console.log(getAverageCoolFactor(customers));
+skip('getAverageCoolFactor', (expect) => {
+    const expected = 5;
 
-    const actual = true;
+    const actual = getAverageCoolFactor(customers);
 
     expect.equal(actual, expected);
 });
