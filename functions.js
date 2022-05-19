@@ -3,8 +3,6 @@ Output:
 ['Hello Suzie Summerson!', 'Hello Cacilia Caramuscia', 'Hello Mattie Mungane' etc]
 */
 export function greetUsers(customers) {
-    
-    console.log(customers);
      // just map over them to make a greeting
     const greeting = customers.map(customer => 'Hello ' + customer.first_name + ' ' + customer.last_name + '!');
     return greeting;
@@ -16,14 +14,11 @@ Output:
 */
 
 export function greetUsersOverAge60(customers) {
-    
-    console.log(customers);
     const over60 = customers.filter(customer => customer.age > 60);
     return greetUsers(over60);
         // first, filter over the user to get the ones over 60
         // then map over them to make a greeting
 }
-
 
 /* 
 Output: 
@@ -97,7 +92,16 @@ Output:
 */
 
 export function getGenderBreakdownOfFordOwners(customers) {
-    return true;
+    return customers
+        .filter(customer => customer.car_make === 'Ford')
+        .reduce((acc, customer) => {
+            if(acc[customer.gender]) {
+                acc[customer.gender]++;
+            } else {
+                acc[customer.gender] = 1;
+            }
+            return acc;
+        }, {});
 }
 
 /* 
@@ -118,7 +122,23 @@ Output:
 */
 
 export function getGenderBreakdownOfEachCar(customers) {
-    return true;
+    return customers.reduce((acc, customer) => {
+        // check to see if my hashMap already has a value with this key
+        if(acc[customer.car_make]) {
+        // if it does, increment
+            if(acc[customer.car_make][customer.gender]) {
+                acc[customer.car_make][customer.gender]++;
+            } else {
+                acc[customer.car_make][customer.gender] = 1;
+            }
+        } else {
+        // if it does NOT initialize
+            acc[customer.car_make] = [];
+            acc[customer.car_make][customer.gender] = 1;
+        }
+
+        return acc;
+    }, {});
 }
 
 /* 
